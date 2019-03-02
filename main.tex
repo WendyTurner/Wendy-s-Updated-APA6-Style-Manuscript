@@ -1,12 +1,21 @@
-\documentclass[letter,man,noextraspace,natbib]{apa6}
+\documentclass[letter,man,noextraspace,floatsintext]{apa6}
 
-\usepackage[english]{babel}
-\usepackage[utf8x]{inputenc}
+\usepackage[american]{babel}
+%\usepackage[utf8x]{inputenc}
 \usepackage{amsmath}
 \usepackage{graphicx}
+
 \usepackage[colorinlistoftodos]{todonotes}
 \usepackage{comment}
+
+\usepackage[style=apa,sortcites=true,sorting=nyt,backend=biber]{biblatex}
+\DeclareLanguageMapping{american}{american-apa}
+\addbibresource{references.bib}
 \usepackage{url}
+
+\usepackage{csquotes}
+
+
 \AtBeginDocument{\urlstyle{APACsame}}
 
 \title{Your APA6-Style Manuscript}
@@ -33,6 +42,9 @@ Command Result
 http://merkel.texture.rocks/Latex/natbib.php
 \end{comment}
 
+\parencite{elliott_effective_2014}
+\parencite{lawrence_understanding_2017}
+
 Your introduction goes here! Some examples of commonly used commands and features are listed below, to help you get started.
 
 If you have a question, please use the support box in the bottom right of the screen to get in touch. 
@@ -51,7 +63,7 @@ You can add inline TODO comments with the todonotes package, like this:
 
 \subsection{References}
 
-LaTeX automatically generates a bibliography in the APA style from your .bib file. The citep command generates a formatted citation in parentheses \citep{Lamport1986}. The cite command generates one without parentheses. LaTeX was first discovered by \cite{Lamport1986}.
+LaTeX automatically generates a bibliography in the APA style from your .bib file. The citep command generates a formatted citation in parentheses \parencite{elliott_effective_2014}. The cite command generates one without parentheses. LaTeX was first discovered by \parencite{elliott_effective_2014}.
 
 \subsection{Tables and Figures}
 
@@ -97,8 +109,8 @@ You can make lists with automatic numbering \dots
 
 We hope you find write\LaTeX\ useful, and please let us know if you have any feedback using the help menu above.
 
-\bibliography{example}
 
+\printbibliography
 \end{document}
 
 %
